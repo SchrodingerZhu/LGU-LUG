@@ -1,6 +1,6 @@
 # Linux 101: Choose A Linux Distro 4 Great Fun
 
-Linux可以算是 CSE LGUer 的必备技能了。如果你在实验室搬砖或是上过 CSC3150，CSC4005 这些必修的课程，你应当或多或少的都使用过一些 Linux 的发行版。在LGU 最流行的 Distro 应该是 Ubuntu 了，但是 Linux 的精彩世界原不止于 Ubuntu，如果想要了解更多常用的发行版，或是想要为自己选择一个桌面操作系统，不妨来阅读一下这篇文章里的讨论。
+Linux 可以算是 CSE LGUer 的必备技能了。如果你在实验室搬砖或是上过 CSC3150，CSC4005 这些必修的课程，你应当或多或少的都使用过一些 Linux 的发行版。在LGU 最流行的 Distro 应该是 Ubuntu 了，但是 Linux 的精彩世界原不止于 Ubuntu，如果想要了解更多常用的发行版，或是想要为自己选择一个桌面操作系统，不妨来阅读一下这篇文章里的讨论。
 
 严格意义上，Linux 是由 Linus 开发的操作系统内核，单独的 Linux Kernel 谈不上真正意义上的操作系统；在此基础上，GNU Project 为 Linux 开发了一系列关键的工具和应用，进而组成了最基础的 Linux 系统。今日我们所说的 Linux 系统，实际上是指 GNU/Linux。从这里我们就可以看出，Linux 内核和周边的开发是分开的，这与 FreeBSD 等操作系统的管理模式截然不同，也为 Linux 拥有如此多样的发行版奠定了基础。
 
@@ -10,9 +10,9 @@ Linux 发行版多样性另一个原因是不通开发群体对系统持有不�
 
 <img height=100 src="https://i.imgur.com/yYcnXqv.png"></img>
 
-Debian 是一款由社区推动开发的 Linux 发行版，在 Linux 家族中算得上元老。Debian 一向倡导自主，原生的开发，并制定了 `Debian Social Constract` 作为指导。 从 0.93 版本开始，Debian 引入了著名的`.deb` 格式的软件包，如果你使用过黑苹果，你可能已经接触过这一格式。时至今日，这一软件包格式仍是最受欢迎的格式之一。很多国外知名软件以及网易云，WPS 等一系列国产软件都提供了官方版的`.deb`软件包。后面将要讲到的 Ubuntu 和 Deepin 都可以算是基于 Debian 进行二次开发的衍生版本，因此也沿用了很多 Debian 的特性。但是，Debian 本身的目标和 Ubuntu以及 Deepin 很不一样，默认的分发版本中没有那么多图形化的辅助功能，稳定版本的 package 相对老旧。这些特性为服务器创造了更稳定，更轻量的运行环境，但也为新手入门造成了一些额外的负担。
+Debian 是一款由社区推动开发的 Linux 发行版，在 Linux 家族中算得上元老。Debian 一向倡导自主，原生的开发，并制定了 Debian Social Constract 作为指导。 从 0.93 版本开始，Debian 引入了著名的 deb 格式的软件包，如果你使用过黑苹果，你可能已经接触过这一格式。时至今日，这一软件包格式仍是最受欢迎的格式之一。很多国外知名软件以及网易云，WPS 等一系列国产软件都提供了官方版的 deb 软件包。后面将要讲到的 Ubuntu 和 Deepin 都可以算是基于 Debian 进行二次开发的衍生版本，因此也沿用了很多 Debian 的特性。但是，Debian 本身的目标和 Ubuntu以及 Deepin 很不一样，默认的分发版本中没有那么多图形化的辅助功能，稳定版本的 package 相对老旧。这些特性为服务器创造了更稳定，更轻量的运行环境，但也为新手入门造成了一些额外的负担。
 
-Deb 包系列常用的包管理器是`apt`，经过多个版本的迭代，`apt`已经变得越来越智能。和很多其它包管理器一样，`apt` 能够比较智能地处理各种依赖关系，这使得它使用起来比较方便。
+Deb 包系列常用的包管理器是 apt，经过多个版本的迭代，apt 已经变得越来越智能。和很多其它包管理器一样，apt 能够比较智能地处理各种依赖关系，这使得它使用起来比较方便。
 
 ```plaintext
 apt moo
@@ -24,7 +24,7 @@ apt moo
     ~~   ~~   
 ...."Have you mooed today?"...
 ```
-但是，当一个包存在多个版本时，`deb` 系列常见的行为是加一个版本后缀，比如：
+但是，当一个包存在多个版本时，deb 系列常见的行为是加一个版本后缀，比如：
 
 - `gcc-7`
 - `gcc-8`
@@ -202,7 +202,17 @@ Alpine 基于 musl （非GNU的开源libc，缩小了体积） 和 BusyBox， �
 
 Clear Linux* 不能算是专门为 container 设计的，但是它越来越受到 container 应用场景的欢迎。Clear Linux* 的软件几乎都被 Intel 专门优化过，且自身带有一些技术栈快速搭建功能，可以方便地搭建高性能容器集群。
 
-### 各种只含 free software 的发行版
+#### Fedora CoreOS
+
+Fedora CoreOS 是一个专门为 Kubernetes 等容器环境设计的系统。它的前身是 CoreOS 开发的 Container Linux，在 2018 年五月 RedHat 收购 CoreOS 后成为其后续。它有许多为在容器中运行而设计的特性，例如：
+
+* 使用配置文件进行配置
+* 方便的系统更新和回退
+* 同时存储多版本系统
+
+（有点像之前提到的 Nix OS...）
+
+### 只含 free software 的发行版
 
 <!-- 注：在中国大陆外发布时可将 "free software" 替换为其中文翻译「自由软件」，。 -->
 
@@ -214,7 +224,10 @@ Clear Linux* 不能算是专门为 container 设计的，但是它越来越受�
 
 这些发行版会预装一个虚拟软件包<!--（通常叫做 `your-freedom`）-->，这个包没有实际功能，但会在内部记载一个 non-free software 的黑名单，并与这个黑名单上的所有软件包冲突。如果要安装黑名单中任何的包，就必须移除这个虚拟软件包。因此，这个包也形象地代表了这个系统遵循的 free 之哲学，代表着用户对 free software 的坚持。
 
-### systemd 与
+### 企业版 Linux
+
+SUSE，RHEL，Oracle Linux，Amazon Linux 等等发行版都是各大企业对高性能需求场景专门优化的版本，发行方式一般比较封闭，付费并提供技术支持。
+
 
 ### Android 也是 Linux！
 
