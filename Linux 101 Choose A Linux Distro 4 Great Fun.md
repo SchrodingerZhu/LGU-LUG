@@ -83,9 +83,11 @@ Ubuntu 对用户友好，Arch Linux 则是「用户中心」，并且有足够�
 
 ~~没有。~~
 
-不过如果说有哪个发行版最接近这个目标，那大概就是 Manjaro 了。Manjaro 基于 Arch Linux 的生态，并且有比较友好的安装器和默认界面。**而且还预装 Steam！**
+不过如果说有哪个发行版最接近这个目标，那大概就是 Manjaro 了。Manjaro 基于 Arch Linux 的生态，并且有比较友好的安装器和默认界面。**而且还预装 Steam！\***
 
-类似 Ubuntu，Manjaro 也提供多种预装桌面，包括 GNOME、KDE、Xfce 及 Architect。
+Manjaro 类似 Ubuntu 一样也提供多种预装桌面，包括 GNOME、KDE、Xfce 及 Architect。
+
+\* 当然，只能玩支持 SteamOS 平台的游戏。
 
 ## OpenSUSE：风滚草与蜥蜴
 
