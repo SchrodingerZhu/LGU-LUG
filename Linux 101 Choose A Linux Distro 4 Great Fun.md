@@ -71,7 +71,7 @@ Arch Linux 可以说是在 meme 领域最出名的发行版之一：由于 Arch 
 
 本文提到的大多数发行版，都会提供图形界面或命令行界面帮用户进行系统配置，或者至少给用户一个界面配置网络连接；Arch Linux 不是这样。Arch Linux 的 Live CD 启动后，留给用户的只有一个空旷的终端界面 (tty)，想连接网络？自己去写网络配置；想给硬盘分区？自己去用 gdisk（只有命令行界面唷）；想设置时区？自己去做软链接...总而言之，「自己动手丰衣足食」。不过，较高的门槛也使得 Arch Linux 的用户平均水平较高，社群氛围较其它发行版略好一筹。
 
-Arch Linux 的基本哲学之一是「用户中心」(User centrality)。这个「用户中心」，指的不是 Ubuntu 的「用户友好」，而是用户可以通过贡献项目使发行版符合自己的需求。Arch  Linux 最让人喜爱的地方就是用户可以对自己的系统有足够细致的了解（因为一切都是用户自行安装的），便于自定义配置及排查问题。
+Arch Linux 的基本哲学之一是「用户中心」(User centrality)。这个「用户中心」，指的不是 Ubuntu 的「用户友好」，而是用户可以通过贡献项目使发行版符合自己的需求。Arch  Linux 最让人喜爱的地方就是用户可以对自己的系统有足够细致的了解（因为一切都是用户自行安装的），便于自定义配置及排查问题。同时，Arch Linux 有着各个发行版中内容最丰富的 wiki 供查阅。
 
 Arch Linux 采用滚动更新模式，软件包的更新也相当及时，使得用户可以使用最新版本的软件。同时，Arch Linux 也是可用软件包最多的发行版之一。AUR 及 archlinuxcn 等第三方软件来源的大量贡献使用户可用的软件数量进一步增加。
 
@@ -79,11 +79,13 @@ Arch Linux 采用滚动更新模式，软件包的更新也相当及时，使得
 
 <img height=100 src="https://i.imgur.com/Df4hGf1.png"></img>
 
-Ubuntu 对用户友好，Arch Linux 则是「用户中心」。有没有一个发行版可以结合这两种特性呢？
+Ubuntu 对用户友好，Arch Linux 则是「用户中心」，并且有足够新的软件包。有没有一个发行版可以结合这两种特性呢？
 
 ~~没有。~~
 
-不过如果说有哪个发行版最接近这个目标，那大概是
+不过如果说有哪个发行版最接近这个目标，那大概就是 Manjaro 了。Manjaro 基于 Arch Linux 的生态，并且有比较友好的安装器和默认界面。**而且还预装 Steam！**
+
+类似 Ubuntu，Manjaro 也提供多种预装桌面，包括 GNOME、KDE、Xfce 及 Architect。
 
 ## OpenSUSE：风滚草与蜥蜴
 
@@ -175,7 +177,7 @@ Qubes OS 使用的 Xen 架构，为了保证安全，Dom 0 的内核保持在比
 Tiny Core Linux 删减了很多内核功能，只保留最基础的运行环境。这个发行版同时提供基于 BusyBox（包含awk，gzip这些基础工具和一个非常简单的 init） 的最基础工具，从而打造了一个极为小巧轻量的系统。
 
 #### Tails
-Tails 是基于 Debian 的非常小巧的（可装在U盘）的 Linux 发行版。Tails的目标是保证安全和匿名，自身携带了 Tor 等网络工具，相当于一个便携的隐身操作系统。
+Tails 是基于 Debian 的非常小巧的（可装在U盘）的 Linux 发行版。Tails的目标是保证安全和匿名，自身携带了匿名 <!-- 指 Tor --> 网络访问工具，相当于一个便携的隐身操作系统。
 
 #### Linux from Scratch (LFS)
 想从零定制自己的 Linux 发行版？当然可以！[Linux From Scratch](http://www.linuxfromscratch.org/) 提供了手把手教程，让你可以从源码一步步的构建自己专属的操作系统。当然，整个过程操作难度较大，适合 Linux 的发烧级用户。
@@ -183,11 +185,39 @@ Tails 是基于 Debian 的非常小巧的（可装在U盘）的 Linux 发行版�
 #### Bedrock
 Bedrock Linux 希望解决发行版选择困难症。通过隔离和运行时挂载和链接的方式，Bedrock Linux使得用户可以同时使用多个发行版：是的，你可以在 ArchLinux 的 Kernel 上运行 OpenSUSE 的 KDE 并同时使用 Fedora 的音乐播放器。但是，和 NixOS 一样，隔离意味着不标准的文件组织格式，作为开发者（尤其是 c/c++ 这种弱工具链却重度依赖链接的语言的开发者），你可能会时常遇到问题。Bedrock Linux 依旧是高度不稳定的且开发进展较慢，请慎用！
 
+#### WSL/WSL2
+
+很多人说 Windows Subsystem Linux 可能是最好的 Linux 发行版，对于这个说法笔者保留意见，但是作为过渡和临时使用，WSL/WSL2 确实是一个不错的选择。配置好 X Server，用户完全可以正常使用 Linux 的桌面应用。当然，WSL 并不是完整的 Linux，没有完整的内核体验，在文件权限（WSL）和 IO 速度（WSL2）也有一定的问题。
+
+#### 渗透测试
+
+有一类比较特殊的发行版（包括Kali，BlackArch）的目标是方便用户进行渗透测试（请自行搜索含义）。~~这一类操作系统的截图大概更适合代替黑客电影中乱七八糟的屏幕显示?~~ 
+
 ### 容器类
 
 #### Alpine Linux
 Alpine 基于 musl （非GNU的开源libc，缩小了体积） 和 BusyBox， 所以本身也十分轻量。麻雀虽小，五脏俱全，alpine 的包和生态都是相对完整的。Docker 和 k8s 环境中，我们时常需要这样的系统作为运行时，既能够提供基础功能又节省资源。
 
+#### Clear Linux*
+
+Clear Linux* 不能算是专门为 container 设计的，但是它越来越受到 container 应用场景的欢迎。Clear Linux* 的软件几乎都被 Intel 专门优化过，且自身带有一些技术栈快速搭建功能，可以方便地搭建高性能容器集群。
+
+### 各种只含 free software 的发行版
+
+<!-- 注：在中国大陆外发布时可将 "free software" 替换为其中文翻译「自由软件」，。 -->
+
+有一个基金会叫 FSF (Free Software Foundation)，提倡 free software 之哲学，并且建议用户只使用 free software。追随这一哲学，许多开发者从目前的发行版中创建分支，发布了一些只使用 free software 的发行版，例如：
+
+* Parabola GNU/Linux，基于 Arch Linux
+* Guix GNU/Linux，类似于 Nix
+* Trisquel GNU/Linux，基于 Ubuntu
+
+这些发行版会预装一个虚拟软件包<!--（通常叫做 `your-freedom`）-->，这个包没有实际功能，但会在内部记载一个 non-free software 的黑名单，并与这个黑名单上的所有软件包冲突。如果要安装黑名单中任何的包，就必须移除这个虚拟软件包。因此，这个包也形象地代表了这个系统遵循的 free 之哲学，代表着用户对 free software 的坚持。
+
+### systemd 与
+
+### Android 也是 Linux！
+
+
 
 ![](https://i.imgur.com/3EoNML7.png)
-
